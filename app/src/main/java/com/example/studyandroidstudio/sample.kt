@@ -1,38 +1,69 @@
 package com.example.studyandroidstudio
 
 fun main(){
-    hellowworld()
 
-    println(add(4, 5))
-
-    //3. String Templete
-    val name = "재현"
-    println("my name is ${name}")
+    forAndWhile()
 }
 
-fun hellowworld() : Unit {
-    println("hellow world!")
+//4. 조건식
+
+fun maxBy(a : Int, b : Int) : Int {
+    if (a > b){
+        return a
+    }
+    else{
+        return b
+    }
 }
 
-fun add(a: Int, b: Int): Int {
-    return a+b
+fun maxBy2(a : Int, b : Int) : Int = if(a>b) a else b
+
+fun checkNumber(score : Int) {
+    when (score) {
+        0 -> println("this is 0")
+        1 -> println("this is 1")
+        else -> println("i don't know")
+    }
+
+    when(score){
+        in 90..100 -> println("You are genius")
+        else -> println("okay")
+    }
 }
 
-//2. val vs var
-//val = value 상수
-//var = 변하는수
+//5. Array and List
 
-fun sample(){
-    val a : Int = 10
-    var b : Int = 20
+fun array(){
+    val array :Array<Int> = arrayOf(1,2,3)
+    val list : List<Int> = listOf(1,2,3)
 
-    //a = 1 //불가능
+    val array2 :Array<Any> = arrayOf(1,"d",2,3)//list도 마찬가지
 
-    val c = 100
-    var d = 200
+    array[0] = 3
+    //list[0] = 3 list는 변경불가(읽기전용)
 
-    var name = "재현"//string 인식 가능
+    val arrayList = arrayListOf<Int>()
+    arrayList.add(10)
+    arrayList[0] = 20
+
 }
 
+//6. For and While
+fun forAndWhile(){
+    val students = arrayListOf("jenny", "lisa", "rose", "jisu")
 
+    for ( name in students){
+        println("${name}")
+    }
 
+    var sum : Int = 0
+    for ( i in 1..10){
+        sum += i
+    }
+
+    var index = 0
+    while (index < 10){
+        println("current index = ${index}")
+        index++
+    }
+}
